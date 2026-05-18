@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Agenda 2030 | Sustentabilidade Empresarial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topo">
+    <nav class="navbar">
+      <h1>EcoPainel da arcelormittal 2030</h1>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#indicadores">Indicadores</a></li>
+        <li><a href="#iniciativas">Iniciativas</a></li>
+        <li><a href="#registro">Registro</a></li>
+        <li><a href="#ranking">Pontuação</a></li>
+      </ul>
+    </nav>
+
+    <section id="inicio" class="hero">
+      <div>
+        <span class="tag">Agenda 2030 da ONU</span>
+        <h2>Painel de Controle Ambiental das Metas ONU 2030</h2>
+        <p>
+          Monitore o uso da água, reduza combustíveis fósseis e acompanhe ações
+          de reflorestamento para apoiar metas de sustentabilidade.
+        </p>
+        <a class="botao" href="#registro">Registrar ação sustentável</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="indicadores" class="secao">
+      <div class="titulo-secao">
+        <span>Dashboard</span>
+        <h2>Indicadores principais</h2>
+      </div>
+
+      <div class="cards-indicadores">
+        <article class="card indicador agua">
+          <h3>Uso da água</h3>
+          <p><strong id="totalAgua">0</strong> L economizados</p>
+          <small>Meta: reduzir desperdícios e reaproveitar recursos hídricos.</small>
+        </article>
+
+        <article class="card indicador combustivel">
+          <h3>Combustíveis fósseis</h3>
+          <p><strong id="totalCombustivel">0</strong> kg CO₂ evitados</p>
+          <small>Meta: diminuir emissões e incentivar transporte limpo.</small>
+        </article>
+
+        <article class="card indicador reflorestamento">
+          <h3>Reflorestamento</h3>
+          <p><strong id="totalArvores">0</strong> árvores plantadas</p>
+          <small>Meta: restaurar áreas verdes e compensar impactos ambientais.</small>
+        </article>
+
+        <article class="card indicador pontos">
+          <h3>Pontuação verde</h3>
+          <p><strong id="totalPontos">0</strong> pontos</p>
+          <small>Quanto mais ações registradas, maior o nível sustentável.</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="iniciativas" class="secao">
+      <div class="titulo-secao">
+        <span>Ações</span>
+        <h2>Iniciativas sustentáveis</h2>
+      </div>
+
+      <div class="filtros">
+        <button class="filtro ativo" data-filtro="todos">Todos</button>
+        <button class="filtro" data-filtro="agua">Água</button>
+        <button class="filtro" data-filtro="combustivel">Combustíveis fósseis</button>
+        <button class="filtro" data-filtro="reflorestamento">Reflorestamento</button>
+      </div>
+
+      <div id="listaIniciativas" class="lista-iniciativas"></div>
+    </section>
+
+    <section id="registro" class="secao secao-formulario">
+      <div class="titulo-secao">
+        <span>Participação</span>
+        <h2>Registrar nova ação ambiental</h2>
+      </div>
+
+      <form id="formAcao" class="formulario" novalidate>
+        <div class="campo">
+          <label for="nome">Nome do colaborador</label>
+          <input type="text" id="nome" placeholder="Ex: Ana Souza" />
+          <small class="erro" id="erroNome"></small>
+        </div>
+
+        <div class="campo">
+          <label for="categoria">Categoria da ação</label>
+          <select id="categoria">
+            <option value="">Selecione uma categoria</option>
+            <option value="agua">Economia de água</option>
+            <option value="combustivel">Redução de combustível fóssil</option>
+            <option value="reflorestamento">Reflorestamento</option>
+          </select>
+          <small class="erro" id="erroCategoria"></small>
+        </div>
+
+        <div class="campo">
+          <label for="valor">Resultado alcançado</label>
+          <input type="number" id="valor" min="1" placeholder="Ex: 50" />
+          <small class="ajuda">
+            Água: litros | Combustível: kg de CO₂ | Reflorestamento: árvores
+          </small>
+          <small class="erro" id="erroValor"></small>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição da ação</label>
+          <textarea id="descricao" rows="4" placeholder="Descreva o que foi feito..."></textarea>
+          <small class="erro" id="erroDescricao"></small>
+        </div>
+
+        <button type="submit" class="botao">Salvar ação</button>
+      </form>
+    </section>
+
+    <section id="ranking" class="secao">
+      <div class="titulo-secao">
+        <span>Gamificação</span>
+        <h2>Histórico e pontuação</h2>
+      </div>
+
+      <div class="nivel">
+        <h3 id="nivelUsuario">Nível: Iniciante Verde</h3>
+        <div class="barra">
+          <div id="barraProgresso"></div>
+        </div>
+      </div>
+
+      <div class="acoes-topo">
+        <button id="limparDados" class="botao-secundario">Limpar dados salvos</button>
+      </div>
+
+      <div id="historicoAcoes" class="historico"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+       Painel de controle para apoiar a Arcelormittal bater metas da Agenda 2030 da ONU.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

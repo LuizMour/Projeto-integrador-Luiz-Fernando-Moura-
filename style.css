@@ -1,0 +1,392 @@
+:root {
+  --verde: #1f8f4d;
+  --verde-escuro: #0f3d2e;
+  --verde-claro: #dff5e8;
+  --azul: #1f78b4;
+  --laranja: #d97706;
+  --cinza: #f4f6f8;
+  --texto: #263238;
+  --branco: #ffffff;
+  --sombra: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--cinza);
+  line-height: 1.6;
+}
+
+.topo {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(15, 61, 46, 0.82), rgba(15, 61, 46, 0.82)),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: var(--branco);
+}
+
+.navbar {
+  width: min(1120px, 92%);
+  margin: auto;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 1.6rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #a7f3d0;
+}
+
+.hero {
+  width: min(1120px, 92%);
+  margin: auto;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+}
+
+.hero div {
+  max-width: 680px;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--verde);
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+
+.hero h2 {
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+
+.botao,
+.botao-secundario {
+  display: inline-block;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.botao {
+  background: var(--verde);
+  color: var(--branco);
+}
+
+.botao:hover {
+  background: #16703c;
+  transform: translateY(-2px);
+}
+
+.botao-secundario {
+  background: #e5e7eb;
+  color: var(--texto);
+}
+
+.botao-secundario:hover {
+  background: #d1d5db;
+}
+
+.secao {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.titulo-secao {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.titulo-secao span {
+  color: var(--verde);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.titulo-secao h2 {
+  font-size: 2.2rem;
+  color: var(--verde-escuro);
+}
+
+.cards-indicadores,
+.lista-iniciativas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+
+.indicador h3 {
+  margin-bottom: 12px;
+}
+
+.indicador p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.indicador strong {
+  font-size: 2rem;
+}
+
+.agua {
+  border-top: 6px solid var(--azul);
+}
+
+.combustivel {
+  border-top: 6px solid var(--laranja);
+}
+
+.reflorestamento {
+  border-top: 6px solid var(--verde);
+}
+
+.pontos {
+  border-top: 6px solid #7c3aed;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.filtro {
+  border: 2px solid var(--verde);
+  background: var(--branco);
+  color: var(--verde);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.filtro:hover,
+.filtro.ativo {
+  background: var(--verde);
+  color: var(--branco);
+}
+
+.iniciativa {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categoria {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.secao-formulario {
+  background: var(--branco);
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.formulario {
+  width: min(760px, 100%);
+  margin: auto;
+  background: var(--cinza);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--sombra);
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 13px;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--verde);
+}
+
+.erro {
+  display: block;
+  color: #dc2626;
+  margin-top: 5px;
+  min-height: 18px;
+}
+
+.ajuda {
+  display: block;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.nivel {
+  background: var(--branco);
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: var(--sombra);
+  margin-bottom: 20px;
+}
+
+.barra {
+  width: 100%;
+  height: 18px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+#barraProgresso {
+  height: 100%;
+  width: 0%;
+  background: var(--verde);
+  transition: width 0.5s;
+}
+
+.acoes-topo {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.historico {
+  display: grid;
+  gap: 14px;
+}
+
+.item-historico {
+  background: var(--branco);
+  padding: 18px;
+  border-left: 6px solid var(--verde);
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+}
+
+.item-historico h3 {
+  color: var(--verde-escuro);
+}
+
+.item-historico small {
+  color: #64748b;
+}
+
+.vazio {
+  text-align: center;
+  background: var(--branco);
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: var(--sombra);
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background: var(--verde-escuro);
+  color: var(--branco);
+}
+
+@media (max-width: 900px) {
+  .cards-indicadores,
+  .lista-iniciativas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .cards-indicadores,
+  .lista-iniciativas {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .secao {
+    padding: 56px 0;
+  }
+}
